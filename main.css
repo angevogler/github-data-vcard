@@ -1,9 +1,9 @@
-body {
+/*body {
   margin-left: 325px;
   margin-right: 325px;
   margin-top: 150px;
   background-color: white;
-}
+}*/
 
 h1 {
   background-color: #708090;
@@ -16,9 +16,8 @@ h1 {
   width: 1000px;
   height: 100px;
   padding: 25px;
-  border-bottom: 10px dotted white;
+  border-bottom: 10px dotted #F08080;
 }
-
 
 .container {
   display: flex;
