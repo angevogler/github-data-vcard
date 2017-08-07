@@ -1,0 +1,68 @@
+body {
+  margin-left: 325px;
+  margin-right: 325px;
+  margin-top: 150px;
+  background-color: white;
+}
+
+h1 {
+  background-color: #708090;
+  font-family: 'Shadows Into Light Two', cursive;
+  color: white;
+  font-size: 65px;
+  font-weight: lighter;
+  text-transform: capitalize;
+  text-align: center;
+  width: 1000px;
+  height: 100px;
+  padding: 25px;
+  border-bottom: 10px dotted white;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Gill Sans', Arial, sans-serif;
+  color: lightGrey;
+  width: 1000px;
+  background-color: #E0FFFF;
+  margin-top: -52px;
+  padding: 25px;
+}
+
+h2 {
+  color: #708090;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 35px;
+}
+
+.the-basics {
+  padding-left: 50px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.category {
+  color: #F08080;
+  font-weight: 600;
+}
+
+.link {
+  color: #708090;
+}
+
+.the-story p {
+  border-left: 1px solid #708090;
+  padding: 10px;
+}
+
+img {
+  margin-top: 50px;
+  height: 100px;
+  border-radius: 50%;
+}

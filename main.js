@@ -7,48 +7,50 @@ function reqListener () {
   cardData.push(data);
   console.log(cardData);
 
-  for (let i = 0; i < cardData.length; i++) {
-    let cardInfo = `
-      <h1>${cardData[i].name}</h1>
-      <div>
+  let cardInfo = `
+  <section>
+    <h1>${data.name}</h1>
+    <div class="container">
+      <div class="the-basics">
         <h2>The Basics</h2>
         <ul>
           <li>
             <span class="category">Name:</span>
-            ${cardData[i].name}
+            ${data.name}
           </li>
           <li>
-            <span class="category">Github URL</span>
-            ${cardData[i].html_url}
+            <span class="category">Github URL:</span>
+            <a class="link" href="${data.html_url}">${data.login}</a>
           </li>
           <li>
             <span class="category">Email:</span>
-            ${cardData[i].email}
+            ${data.email}
           </li>
           <li>
             <span class="category">Company:</span>
-            ${cardData[i].company}
+            ${data.company}
           </li>
           <li>
             <span class="category">Website:</span>
-            ${cardData[i].blog}
+            <a class="link" href="${data.blog}">${data.blog}</a>
           </li>
         </ul>
       </div>
-      <div>
+      <div class="the-story">
         <h2>The Story</h2>
-        <p>${cardData[i].bio}</p>
+        <p>${data.bio}</p>
       </div>
-      <div>
-        <img src="${cardData[i].avatar_url}">
+      <div class="avatar">
+        <img src="${data.avatar_url}">
       </div>
-    `;
-    card += cardInfo;
-  }
+    <div>
+  </section>
+  `;
+  card += cardInfo;
 body.innerHTML = card;
 }
 
 let req = new XMLHttpRequest();
-req.open("GET", "https://api.github.com/users/angevogler");
+req.open("GET", "http://192.168.1.12:8000/octocat");
 req.addEventListener("load", reqListener);
 req.send();
