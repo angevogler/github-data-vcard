@@ -8,7 +8,7 @@ function reqListener () {
   console.log(cardData);
 
   let cardInfo = `
-  <section>
+  <section class="card">
     <h1>${data.name}</h1>
     <div class="container">
       <div class="the-basics">
@@ -47,10 +47,42 @@ function reqListener () {
   </section>
   `;
   card += cardInfo;
-body.innerHTML = card;
+body.innerHTML += card;
+}
+
+function reqListener2 () {
+  let data = JSON.parse(this.responseText);
+  let repoData = `
+    <h2>Repositories</h2>
+  `;
+
+  body = document.querySelector("body");
+  for (let i = 0; i < data.length; i++) {
+    function repoDescription (){
+      if (data[i].description !== null) {
+        return data[i].description;
+      } return "No description provided";
+    }
+
+    let repos = `
+      <div>
+        <h3 class="repo-name">${data[i].name}</h3>
+        <span class="repo-title">Repo Description:</span>
+        <p class="repo-description">${repoDescription()}</p>
+      <div>
+    `;
+    repoData += repos;
+  }
+
+  body.innerHTML += repoData;
 }
 
 let req = new XMLHttpRequest();
 req.open("GET", "https://api.github.com/users/angevogler");
 req.addEventListener("load", reqListener);
+req.send();
+
+let req2 = new XMLHttpRequest();
+req.open("GET", "https://api.github.com/users/angevogler/repos");
+req.addEventListener("load", reqListener2);
 req.send();
