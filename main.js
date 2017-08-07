@@ -51,6 +51,6 @@ body.innerHTML = card;
 }
 
 let req = new XMLHttpRequest();
-req.open("GET", "http://192.168.1.12:8000/octocat");
+req.open("GET", "https://api.github.com/users/angevogler");
 req.addEventListener("load", reqListener);
 req.send();

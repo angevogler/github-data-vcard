@@ -39,6 +39,7 @@ h2 {
 
 .the-basics {
   padding-left: 50px;
+  width: 33%;
 }
 
 ul {
@@ -55,9 +56,14 @@ ul {
   color: #708090;
 }
 
+.the-story {
+  width: 33%;
+}
+
 .the-story p {
   border-left: 1px solid #708090;
   padding: 10px;
+
 }
 
 img {
